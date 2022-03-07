@@ -30,8 +30,19 @@ nav{
     }
   }
   .center{
-    @media screen and (max-width:480px) {
-      display: none;
+    @media screen and(max-width:1100px) {
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      gap: 0;
+      flex-direction: column;
+      background-color: #181734;
+      width: 100%;
+      text-align: center;
+      transition: .3s;
+      .center.actively{
+        left: 0;
+    }
     }
     display: flex;
     justify-content: center;
@@ -84,6 +95,37 @@ nav{
     .dropdown:hover .dropContent {
       display: block;
     }
+  }
+    .harmburger{
+      cursor: pointer;
+      display: none;
+      @media screen and(max-width:1100px) {
+          display: block;
+      }
+      .bar{
+          display: block;
+          width: 25px;
+          height: 3px;
+          margin: 5px auto;
+          -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+          background-color: #000;
+      }
+  }
+  .harmburger.actively .bar:nth-child(2){
+      @media screen and(max-width:1100px) {
+          opacity: 0;
+      }
+  }
+  .harmburger.actively .bar:nth-child(1){
+      @media screen and(max-width:1100px) {
+          transform: translateY(8px) rotate(45deg);
+      }
+  }
+  .harmburger.actively .bar:nth-child(3){
+      @media screen and(max-width:1100px) {
+          transform: translateY(-8px) rotate(-45deg);
+      }
   }
 }
 .slideshow-container {

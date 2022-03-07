@@ -39,3 +39,17 @@ productContainer.forEach((item, idx)=>{
     item.scrollLeft -= cw
   })
 })
+
+// menu toggle
+const harmburger = document.querySelector('.harmburger')
+const ul = document.getElementById('ul')
+
+harmburger.addEventListener('click', ()=>{
+    harmburger.classList.toggle('actively')
+    ul.classList.toggle('actively')
+})
+
+document.querySelectorAll('.dropbtn').forEach(n => n.addEventListener('click', () => {
+    harmburger.classList.remove('actively')
+    ul.classList.remove('actively')
+}))
